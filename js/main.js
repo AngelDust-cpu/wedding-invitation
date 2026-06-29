@@ -3,6 +3,33 @@
  * FILENAME: main.js
  */
 
+
+ const music = document.getElementById('bg-music');
+const container = document.querySelector('.invitation-container');
+const welcomeScreen = document.getElementById('welcome-screen');
+
+function initExperience() {
+    // 1. Убираем экран приветствия
+    welcomeScreen.style.opacity = '0';
+    setTimeout(() => welcomeScreen.style.display = 'none', 500);
+
+    // 2. Включаем музыку
+    music.play().catch(e => console.log("Music blocked"));
+
+    // 3. Запускаем автопрокрутку
+    setInterval(() => {
+        const scrollStep = window.innerHeight;
+        if (container.scrollTop + scrollStep < container.scrollHeight) {
+            container.scrollBy({ top: scrollStep, behavior: 'smooth' });
+        } else {
+            container.scrollTo({ top: 0, behavior: 'smooth' }); // Зацикливание
+        }
+    }, 8000); // Прокрутка каждые 6 секунд
+}
+
+// Слушатель одного клика по всему экрану
+welcomeScreen.addEventListener('click', initExperience);
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Mobile Real Estate Layout Fix (100vh viewport adaptation for modern devices)
@@ -80,3 +107,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initWeddingCountdown();
     handleSmoothVibes();
 });
+
