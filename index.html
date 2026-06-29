@@ -1,194 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleanor & James - Wedding Invitation</title>
-    <meta name="description" content="Join us to celebrate the wedding of Eleanor and James.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#F9F6F0">
+    <title>Александр & Екатерина | Свадебное приглашение</title>
+    <meta name="description" content="С трепетом и радостью приглашаем вас разделить с нами торжество нашей любви.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="scroll-progress"></div>
-
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="logo">E & J</a>
-            <ul class="nav-links">
-                <li><a href="#welcome">Welcome</a></li>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#rsvp">RSVP</a></li>
-            </ul>
-            <div class="hamburger" aria-label="Toggle Navigation">
-                <span></span><span></span><span></span>
+    <main class="invitation-app">
+        
+        <section class="slide hero-slide" id="slide-1">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
             </div>
-        </div>
-    </nav>
-
-    <header id="hero" class="section-hero">
-        <div class="hero-overlay"></div>
-        <div id="particles"></div> <div class="hero-content reveal-fade">
-            <p class="subtitle">WE ARE GETTING MARRIED</p>
-            <h1 class="parallax-text">Eleanor & James</h1>
-            <p class="date">September 24, 2026 • Bishkek, Kyrgyzstan</p>
-        </div>
-        <a href="#welcome" class="scroll-indicator" aria-label="Scroll Down">
-            <span></span>
-        </a>
-    </header>
-
-    <main>
-        <section id="welcome" class="section-padding">
-            <div class="container text-center">
-                <h2 class="reveal-up">Join Us to Celebrate</h2>
-                <p class="reveal-up delay-1">We are thrilled to invite you to our special day. Surrounded by the beautiful mountains of Chuy Province, we will exchange our vows and begin our new chapter together.</p>
+            
+            <div class="slide-content hero-content">
+                <div class="welcome-wrapper reveal-text">
+                    <p class="welcome-phrase">С трепетом и радостью приглашаем вас на</p>
+                    <p class="wedding-theme">Торжество нашей любви</p>
+                </div>
                 
-                <div class="countdown reveal-up delay-2" id="countdown">
-                    <div class="time-box">
-                        <span id="days" class="time-value">00</span>
-                        <span class="time-label">Days</span>
-                    </div>
-                    <div class="time-box">
-                        <span id="hours" class="time-value">00</span>
-                        <span class="time-label">Hours</span>
-                    </div>
-                    <div class="time-box">
-                        <span id="minutes" class="time-value">00</span>
-                        <span class="time-label">Minutes</span>
-                    </div>
-                    <div class="time-box">
-                        <span id="seconds" class="time-value">00</span>
-                        <span class="time-label">Seconds</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="story" class="section-padding bg-alt">
-            <div class="container">
-                <h2 class="text-center reveal-up">Our Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item reveal-left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-panel">
-                            <h3>First Meeting</h3>
-                            <span class="timeline-date">October 2022</span>
-                            <p>We met at a cozy coffee shop in the city center. What was supposed to be a quick chat turned into hours of conversation.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal-right">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-panel">
-                            <h3>First Vacation</h3>
-                            <span class="timeline-date">July 2024</span>
-                            <p>We traveled to the coast and realized we made the perfect team, navigating life and adventures together.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item reveal-left">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content glass-panel">
-                            <h3>The Proposal</h3>
-                            <span class="timeline-date">December 2025</span>
-                            <p>Under a canopy of winter stars, James asked the easiest question Eleanor ever had to answer.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="events" class="section-padding">
-            <div class="container">
-                <h2 class="text-center reveal-up">The Details</h2>
-                <div class="grid-cards">
-                    <div class="card glass-panel reveal-up">
-                        <h3>Ceremony</h3>
-                        <p class="time">3:00 PM</p>
-                        <p>The Grand Garden<br>123 Botanical Way, Bishkek</p>
-                    </div>
-                    <div class="card glass-panel reveal-up delay-1">
-                        <h3>Cocktails</h3>
-                        <p class="time">4:30 PM</p>
-                        <p>The Terrace</p>
-                    </div>
-                    <div class="card glass-panel reveal-up delay-2">
-                        <h3>Dinner & Party</h3>
-                        <p class="time">6:00 PM - Late</p>
-                        <p>The Crystal Ballroom</p>
-                    </div>
-                </div>
-
-                <div class="dress-code reveal-up mt-large">
-                    <h3>Dress Code: Black Tie Optional</h3>
-                    <div class="color-palette">
-                        <div class="color-swatch" style="background: #1a1a1a;" aria-label="Black"></div>
-                        <div class="color-swatch" style="background: #2c3e50;" aria-label="Navy"></div>
-                        <div class="color-swatch" style="background: #D4AF37;" aria-label="Gold"></div>
-                        <div class="color-swatch" style="background: #8b9dc3;" aria-label="Dusty Blue"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery" class="section-padding bg-alt">
-            <div class="container">
-                <h2 class="text-center reveal-up">Memories</h2>
-                <div class="masonry-gallery">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="Couple holding hands" class="gallery-img reveal-up span-2">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="Wedding rings" class="gallery-img reveal-up delay-1">
-                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=800" alt="Flowers" class="gallery-img reveal-up delay-2">
-                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800" alt="Couple laughing" class="gallery-img reveal-up span-2">
-                </div>
-            </div>
-        </section>
-
-        <section id="rsvp" class="section-padding">
-            <div class="container text-center">
-                <h2 class="reveal-up">RSVP</h2>
-                <p class="reveal-up delay-1">Kindly respond by August 1st, 2026</p>
+                <h1 class="couple-names reveal-names">
+                    <span class="name">Александр</span>
+                    <span class="ampersand">&amp;</span>
+                    <span class="name">Екатерина</span>
+                </h1>
                 
-                <form class="rsvp-form glass-panel reveal-up delay-2" onsubmit="event.preventDefault();">
-                    <div class="form-group">
-                        <input type="text" id="name" required placeholder="Full Name(s)">
+                <div class="scroll-indicator fade-in">
+                    <span class="scroll-text">Листайте вниз</span>
+                    <div class="scroll-line">
+                        <div class="scroll-dot"></div>
                     </div>
-                    <div class="form-group">
-                        <select id="attendance" required>
-                            <option value="" disabled selected>Will you be attending?</option>
-                            <option value="yes">Joyfully Accept</option>
-                            <option value="no">Regretfully Decline</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" id="guests" min="1" max="5" placeholder="Number of Guests">
-                    </div>
-                    <div class="form-group">
-                        <textarea id="dietary" rows="3" placeholder="Dietary Requirements / A Song to Dance to"></textarea>
-                    </div>
-                    <button class="btn-primary ripple">Send RSVP</button>
-                </form>
+                </div>
             </div>
         </section>
+
+        <section class="slide message-slide" id="slide-2">
+            <div class="slide-content">
+                <div class="glass-card slide-up">
+                    <div class="decorative-ornament top-ornament"></div>
+                    
+                    <h2 class="section-title">Дорогие родные и друзья!</h2>
+                    
+                    <div class="message-text">
+                        <p>В нашей жизни наступает особенный, волнующий момент. Мы стоим на пороге нового пути и хотим разделить это мгновение с теми, кто нам по-настоящему дорог.</p>
+                        <p>Ваше присутствие, искренние улыбки и теплые слова сделают наш праздник поистине незабываемым.</p>
+                        <p>Будем безмерно счастливы видеть вас рядом в день, когда мы скажем друг другу главное «Да».</p>
+                    </div>
+                    
+                    <div class="signature">
+                        <p>С любовью,<br>Александр и Екатерина</p>
+                    </div>
+                    
+                    <div class="decorative-ornament bottom-ornament"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide details-slide" id="slide-3">
+            <div class="slide-content">
+                <h2 class="section-title fade-in">Детали торжества</h2>
+                
+                <div class="cards-container">
+                    <div class="info-card reveal-card">
+                        <div class="icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        </div>
+                        <h3 class="card-label">Когда</h3>
+                        <div class="card-data">
+                            <p class="data-primary">29 Августа 2026</p>
+                            <p class="data-secondary">Сбор гостей: 16:00</p>
+                            <p class="data-secondary">Начало церемонии: 17:00</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card reveal-card delay-1">
+                        <div class="icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <h3 class="card-label">Где</h3>
+                        <div class="card-data">
+                            <p class="data-primary">Резиденция «Royal Garden»</p>
+                            <p class="data-secondary">Панорамный зал</p>
+                            <p class="data-tertiary">г. Бишкек, ул. Элебесова, 150</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rsvp-footer fade-in">
+                    <p>Пожалуйста, подтвердите свое присутствие<br>до 10 августа 2026 года.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
-
-    <footer>
-        <div class="container text-center">
-            <h2>E & J</h2>
-            <p>September 24, 2026</p>
-            <p class="footer-small">Made with love</p>
-        </div>
-    </footer>
-
-    <a href="#hero" class="back-to-top" aria-label="Back to top">↑</a>
-
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-    </div>
 
     <script src="js/main.js"></script>
 </body>
