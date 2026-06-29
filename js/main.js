@@ -1,85 +1,82 @@
 /**
- * ==========================================================================
- * LUXURY WEDDING INVITATION | MAIN JAVASCRIPT
- * ==========================================================================
- * Priority: Performance, Smoothness, Mobile Optimization
+ * PREMIUM LUXURY WEDDING INVITATION INTERACTION ARCHETYPE
+ * FILENAME: main.js
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    /* ----------------------------------------------------------------------
-       1. MOBILE VIEWPORT HEIGHT FIX
-       Fixes the 100vh issue on mobile browsers (Safari/Chrome) where 
-       the address bar changes the actual viewport height.
-       ---------------------------------------------------------------------- */
-    const setDynamicViewportHeight = () => {
-        // We use dvh in CSS, but this is a fallback/enhancement for precise calculations if needed
-        let vh = window.innerHeight * 0.01;
+    // 1. Mobile Real Estate Layout Fix (100vh viewport adaptation for modern devices)
+    const updateViewportHeight = () => {
+        const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     };
     
-    // Initial set and recalculate on resize/orientation change
-    setDynamicViewportHeight();
-    window.addEventListener('resize', setDynamicViewportHeight);
-    window.addEventListener('orientationchange', setDynamicViewportHeight);
+    updateViewportHeight();
+    window.addEventListener('resize', updateViewportHeight);
+    window.addEventListener('orientationchange', updateViewportHeight);
 
-    /* ----------------------------------------------------------------------
-       2. INTERSECTION OBSERVER FOR REVEAL ANIMATIONS
-       Triggers CSS transitions when elements enter the viewport.
-       ---------------------------------------------------------------------- */
-    // Select all elements that need to be animated
-    const animatedElements = document.querySelectorAll(
-        '.reveal-text, .reveal-names, .slide-up, .fade-in, .reveal-card'
-    );
+    // 2. High-Performance Lightweight Target Countdown Engine
+    const initWeddingCountdown = () => {
+        // Target Date Set exactly to July 25, 2026 at 15:30 (Gathering Time)
+        const weddingDate = new Date('2026-07-25T15:30:00').getTime();
+        
+        const countdownGrid = document.getElementById('countdown');
+        const expiredMessage = document.getElementById('countdown-message');
+        
+        const elements = {
+            days: document.getElementById('days'),
+            hours: document.getElementById('hours'),
+            minutes: document.getElementById('minutes'),
+            seconds: document.getElementById('seconds')
+        };
 
-    // Set up observer options
-    const observerOptions = {
-        root: null, // use the browser viewport
-        rootMargin: '0px 0px -5% 0px', // Trigger slightly before the element is fully in view
-        threshold: 0.15 // Trigger when 15% of the element is visible
-    };
+        if (!countdownGrid || !expiredMessage) return;
 
-    // Callback function when intersection occurs
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add the class that triggers the CSS transition
-                entry.target.classList.add('is-visible');
-                
-                // Stop observing once animated to save mobile battery/performance
-                observer.unobserve(entry.target);
+        const updateTimer = () => {
+            const now = new Date().getTime();
+            const timeDifference = weddingDate - now;
+
+            if (timeDifference <= 0) {
+                // Target timeline reached
+                countdownGrid.classList.add('hidden');
+                expiredMessage.classList.remove('hidden');
+                clearInterval(timerInterval);
+                return;
             }
-        });
+
+            // High Precision Time Calculations
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            // Pad single digit numbers elegantly (e.g., '09' instead of '9')
+            elements.days.textContent = String(days).padStart(2, '0');
+            elements.hours.textContent = String(hours).padStart(2, '0');
+            elements.minutes.textContent = String(minutes).padStart(2, '0');
+            elements.seconds.textContent = String(seconds).padStart(2, '0');
+        };
+
+        // Immediate initial call to avoid unstyled flickering states
+        updateTimer();
+        const timerInterval = setInterval(updateTimer, 1000);
     };
 
-    // Initialize the Intersection Observer
-    const animationObserver = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Observe each element
-    animatedElements.forEach(el => {
-        animationObserver.observe(el);
-    });
-
-    /* ----------------------------------------------------------------------
-       3. FIRST LOAD ANIMATION TRIGGER
-       Ensures the first slide animates immediately upon load, 
-       even if the observer takes a millisecond to fire.
-       ---------------------------------------------------------------------- */
-    setTimeout(() => {
-        const heroElements = document.querySelectorAll('#slide-1 .reveal-text, #slide-1 .reveal-names, #slide-1 .fade-in');
-        heroElements.forEach(el => el.classList.add('is-visible'));
-    }, 100); // Slight delay for cinematic effect after blank screen
-
-    /* ----------------------------------------------------------------------
-       4. PREVENT OVERSCROLL BOUNCE (iOS)
-       Keeps the scroll-snap feeling solid and app-like.
-       ---------------------------------------------------------------------- */
-    document.body.addEventListener('touchmove', function(e) {
-        // Prevent default scrolling behavior on the body if it reaches the absolute top/bottom
-        // Note: The main scrollable container is .invitation-app
-        if (e.target === document.body) {
-            e.preventDefault();
+    // 3. Native Fluid Scroll Performance Enhancements
+    const handleSmoothVibes = () => {
+        const slides = document.querySelectorAll('.slide');
+        
+        // Setup minimal subtle scroll layout changes if necessary
+        const container = document.querySelector('.invitation-container');
+        if (container) {
+            container.addEventListener('scroll', () => {
+                // Prevents viewport overscroll bounces from breaking layout cohesion
+                if (container.scrollTop < 0) container.scrollTop = 0;
+            }, { passive: true });
         }
-    }, { passive: false });
+    };
 
+    // Initialize scripts
+    initWeddingCountdown();
+    handleSmoothVibes();
 });
