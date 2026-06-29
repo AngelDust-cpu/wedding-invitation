@@ -56,7 +56,7 @@
                 
                 <div class="hero-divider"></div>
                 
-                <p class="hero-tagline">Күн баткан алтын ирмемдерде биздин жаңы тарыхыбыздын башталышына күбө болуңуздар</p>
+                <p class="hero-tagline">Биздин жаңы биргелешкен жашообузга негиз сала турган унутулгус кечтин кубанычын биз менен тең бөлүшүңүздөр</p>
                 
                 <div class="scroll-indicator">
                     <p class="scroll-text">Төмөн карай барактаңыз</p>
@@ -74,19 +74,17 @@
                     <span class="frame-corner bottom-left"></span>
                     <span class="frame-corner bottom-right"></span>
                     
-                    <p class="editorial-caption">Үлпөт тоого чакыруу</p>
+                    <p class="editorial-caption">Үйлөнүү үлпөт тойго чакыруу</p>
                     
-                    <h2 class="section-title">Аруу Тиллек</h2>
+                    
                     
                     <div class="text-block">
-                        <p class="luxury-p">
-                            Жашоонун эң кымбат жана баалуу көз ирмемдери жакындарыбыздын ортосунда өткөн убакыт менен өлчөнөт. Бул өзгөчө күнү биз бири-бирибизге болгон сүйүүбүздү жана берилгендигибизди билдиргибиз келет.
-                        </p>
+
                         <p class="luxury-p highlighted-text">
                             Жаңы жашоого кадам таштап жаткан убагыбызда биз менен бирге болуп, кубанычыбызды тең бөлүшүүгө, ак тилек, аруу каалоолоруңуздарды билдирип кетүүгө сиздерди чын жүрөктөн чакырабыз.
                         </p>
                         <p class="luxury-p signature">
-                            Терең урматыбыз менен, Бекзат жана Зарина
+                            Терең урматыбыз менен, той ээлери: Улан Назгүл
                         </p>
                     </div>
                 </div>
@@ -112,7 +110,7 @@
                     </div>
                     <div class="luxury-card half-card">
                         <p class="card-label">Дресс-код</p>
-                        <p class="card-time-val-sub">Black Tie / Cocktail</p>
+                        <p class="card-time-val-sub">Classic</p>
                     </div>
                 </div>
 
@@ -161,8 +159,35 @@
                 <p class="footer-note">Сиздерди чоң кубаныч менен күтөбүз!</p>
             </div>
         </section>
+        <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+    const music = document.getElementById('bg-music');
+    const container = document.querySelector('.invitation-container');
+    
+    // 1. Активация музыки и автопрокрутка после выбора языка
+    function startExperience() {
+        music.play().catch(e => console.log("Браузер ожидает взаимодействия с пользователем"));
+        
+        // Автопрокрутка каждые 5 секунд (5000 мс)
+        setInterval(() => {
+            if (container.scrollTop < container.scrollHeight - container.clientHeight) {
+                container.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+            } else {
+                container.scrollTo({ top: 0, behavior: 'smooth' }); // Возврат в начало
+            }
+        }, 5000); 
+    }
+
+    // Привязываем функцию к кнопкам языка
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', startExperience);
+    });
+    </script>
     </main>
+    
 
     <script src="js/main.js"></script>
 </body>
