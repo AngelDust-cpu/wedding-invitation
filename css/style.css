@@ -219,7 +219,7 @@ html, body {
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+    font-size: clamp(1.5rem, 6.5vw, 2.1rem);
     line-height: 1.5;
     color: var(--clr-charcoal);
     max-width: 85%;
